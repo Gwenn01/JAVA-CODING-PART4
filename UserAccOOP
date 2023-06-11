@@ -1,0 +1,84 @@
+import java.util.*;
+
+class User{
+   public static String userName;
+   public static int enterPassword;
+   public static int confirmPassword;
+   public static boolean isCreated;
+    
+    public static void createAcc(){
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter a User Name: ");
+        String userNam = s.nextLine();
+        System.out.print("Enter Password: ");
+        int enterPass = s.nextInt();
+        System.out.print("Confirm Password: ");
+        int confirmPass = s.nextInt();
+        System.out.println();
+        
+        userName = userNam;
+        enterPassword = enterPass;
+        confirmPassword = confirmPass;
+    }
+    
+    public static void show(){
+        if(enterPassword != confirmPassword){
+            System.out.println("Enter a Valid Password!!");
+            createAcc();
+        }else{
+        System.out.println("Your Account has been Created!!!");
+        isCreated = true;
+        }
+    }
+    
+    
+}
+class Login extends User{      
+        public static boolean isCorrect;
+        
+    public static void displayLogin(){
+        System.out.println("============");
+        System.out.println("   LOG  IN      ");
+        System.out.println("============");
+        
+    }
+    public static void login(){   
+        Scanner s = new Scanner(System.in);
+        
+        System.out.print("ENTER USER NAME: ");
+        String enterUserNam = s.nextLine();
+        System.out.print("ENTER PASWORD: ");
+        int enterPass = s.nextInt();
+        
+        if(enterUserNam.equals(userName) && enterPass == confirmPassword){
+            System.out.println("WELCOME USER!!");
+            isCorrect = true;
+        }else{
+             System.out.println("INVALID USER!!");
+             isCorrect = false;     
+        }
+        
+    }
+}
+
+public class Main {
+	public static void main(String[] args) {
+		User user = new User();
+		Login log = new Login();
+		
+		user.createAcc();
+		
+		while(user.isCreated != true){
+		user.show();
+		}
+		
+		log.displayLogin();
+		
+		while(log.isCorrect != true){
+		    log.login();
+		}
+		
+		
+   }
+	
+}

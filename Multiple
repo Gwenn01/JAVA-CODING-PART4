@@ -1,0 +1,85 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		Switch();
+	}
+	public static void Switch(){
+	    Scanner s = new Scanner(System.in);
+	    System.out.print("Enter a Number between 1 to 10: ");
+	    int num = s.nextInt();
+	    
+	    switch(num){
+	        case 1:
+    	        for(int i = 1; i <= 10; i++){
+    	            System.out.println(i);
+    	        }
+    	     break;
+    	     case 2:
+    	     System.out.print("Enter a number: ");
+    	     int num1 = s.nextInt();
+    	        for(int i = 1; i <= num1; i++){
+    	            System.out.println(i*2);
+    	        }
+    	     break;
+    	     case 3:
+    	        System.out.print("Enter a number: ");
+    	     int num2 = s.nextInt();
+    	        for(int i = 1; i < num2; i++){
+    	            System.out.println(i*3);
+    	        }
+    	     break;
+    	     case 4:
+    	       System.out.print("Enter a number: ");
+    	     int num3 = s.nextInt();
+    	        for(int i = 1; i <= num3; i++){
+    	            System.out.println(i*4);
+    	        }
+    	     break;
+    	     case 5:
+    	       System.out.print("Enter a number: ");
+    	     int num4 = s.nextInt();
+    	        for(int i = 1; i <= num4; i++){
+    	            System.out.println(i*5);
+    	        }
+    	     break;
+    	     case 6:
+    	       System.out.print("Enter a number: ");
+    	     int num5 = s.nextInt();
+    	        for(int i = 1; i <= num5; i++){
+    	            System.out.println(i*6);
+    	        }
+    	     break;
+    	     case 7:
+    	       System.out.print("Enter a number: ");
+    	     int num6 = s.nextInt();
+    	        for(int i = 1; i <= num6; i++){
+    	            System.out.println(i*7);
+    	        }
+    	     break;
+    	     case 8:
+    	       System.out.print("Enter a number: ");
+    	     int num7 = s.nextInt();
+    	        for(int i = 1; i <= num7; i++){
+    	            System.out.println(i*8);
+    	        }
+    	     break;
+    	     case 9:
+    	       System.out.print("Enter a number: ");
+    	     int num8 = s.nextInt();
+    	        for(int i = 1; i <= num8; i++){
+    	            System.out.println(i*9);
+    	        }
+    	     break;
+    	       case 10:
+    	       System.out.print("Enter a number: ");
+    	     int num9 = s.nextInt();
+    	        for(int i = 1; i <= num9; i++){
+    	            System.out.println(i*10);
+    	        }
+    	     break;
+    	     default:
+    	        System.out.println("Invalid Number!!");
+	    }
+	    
+	}
+}

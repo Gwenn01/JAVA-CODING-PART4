@@ -1,0 +1,43 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.println("SBB Calculator");
+		System.out.print("Enter how many Group: ");
+		int length = s.nextInt();
+		
+		
+		ssb(length);
+	}
+	public static void ssb(int length){
+	    Scanner s = new Scanner(System.in);
+	    double[] groups = new double[length];
+	    double ssb1 = 0, ssb2 = 0, result;
+	    
+	    for(int i = 0; i < groups.length; i++){
+	        System.out.print("Enter Group" + (i+1) + " : ");
+	        groups[i] = s.nextDouble();
+	    }
+	    
+	    System.out.print("Enter n: ");
+	    double n = s.nextDouble();
+	    System.out.print("Enter N: ");
+	    double N = s.nextDouble();
+	    
+	    for(int i = 0; i < groups.length; i++){
+	        ssb1 = ssb1 + (groups[i] * groups[i]);
+	    }
+	    ssb1 = ssb1 / n;
+	    
+	    for(int i = 0; i < groups.length; i++){
+	        ssb2 = ssb2 + groups[i];
+	    }
+	    ssb2 = (ssb2 * ssb2);
+	    ssb2 = ssb2 / N;
+	    
+	    System.out.println(ssb1 + "      " + ssb2);
+	    result = ssb1 - ssb2;
+	    System.out.println("SSB = " + result);
+	    
+	}
+}

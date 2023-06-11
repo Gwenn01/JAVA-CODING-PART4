@@ -1,0 +1,29 @@
+public class Main {
+	public static void main(String[] args) {
+		String str = "daajbdb";
+		
+		System.out.println("Single Character: " + singleChar(str));
+	}
+	public static char singleChar(String str){
+	    char[] convert = str.toCharArray();
+	    char result = ' ';
+	    
+	    for(int i = 0; i < convert.length; i++){
+	        for(int j = i+1; j < convert.length; j++){
+	            if(convert[i] == convert[j]){
+	                convert[i] = ' ';
+	                convert[j] = ' ';
+	                break;
+	            }
+	        }
+	    }
+	   
+	    for(int i = 0; i < convert.length; i++){
+	        if(convert[i] != ' '){
+	            result = convert[i];
+	        }
+	    }
+	    
+	   return result; 
+	}
+}

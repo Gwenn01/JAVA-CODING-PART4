@@ -1,0 +1,32 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		//given 25
+		//5x5= 25
+		
+		System.out.print("Enter a Number: ");
+		int num = s.nextInt();
+		
+		System.out.println(compute(num));
+	}
+	
+	public static boolean compute(int num){
+	    int multiply = 1;
+	    int sum = 1;
+	    boolean isSquared = false;
+	    while(sum != num){
+	        sum = multiply * multiply;
+	        multiply++;
+	        System.out.println(sum);
+	    }
+	    
+	    if(sum == num){
+	        isSquared = true;
+	    }
+	    
+	    
+	    return isSquared;
+	    
+	}
+}

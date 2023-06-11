@@ -1,0 +1,33 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+	
+		System.out.println("Total Sum: " + sumOfArrList());	
+	}
+	public static int sumOfArrList(){
+	    Scanner s = new Scanner(System.in);
+	    
+	    ArrayList<Integer> list = new ArrayList<Integer>();
+	    
+	    int sum = 0;
+	    int option = 1;
+	    
+	    do{
+	        System.out.println("1. Enter Number");
+	        System.out.println("2. Exit");
+	        System.out.print("Option: ");
+	        option = s.nextInt();  
+	        
+	        if(option == 1){
+	            int num = s.nextInt();
+	            list.add(num);
+	        }        
+	    }while(option != 2);
+	    
+	   for(int i = 0; i < list.size(); i++){
+	        sum += list.get(i);
+	   }
+	    
+	    return sum;
+	}
+}

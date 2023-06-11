@@ -1,0 +1,38 @@
+public class Main {
+	public static void main(String[] args) {
+		int[][] arr = {
+		                    {1, 5, 9},
+		                    {4, 7, 10},
+		                    {5, 6, 8}
+	                    	};
+	                    	
+	    row(arr);
+	    System.out.println();
+	    column(arr);
+	}
+	//
+	public static void row(int[][] arr){
+	    int row = 0;
+	    System.out.print("Sum of Row: ");
+	    for(int i = 0; i < arr.length; i++){
+	        row = 0;
+	        for(int j = 0; j < arr[i].length; j++){
+	            row = row + arr[i][j];
+	            
+	        }
+	        System.out.print(row + " ");
+	    }
+	  }
+	//
+		public static void column(int[][] arr){
+	    int col = 0;
+	    System.out.print("Sum of Column: ");
+	    for(int i = 0; i < arr.length; i++){
+	        col = 0;
+	        for(int j = 0; j < arr.length; j++){
+	            col = col + arr[j][i];
+	        }
+	        System.out.print(col + " ");
+	    }
+	  }
+}

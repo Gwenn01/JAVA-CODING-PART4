@@ -1,0 +1,52 @@
+public class Main {
+	public static void main(String[] args) {
+		String str = "Hello wolrd";
+		
+		System.out.println(toUpperCase(str));
+	}
+	public static String toUpperCase(String str){
+	    String result = "";
+	    
+	    String alpha = "abcdefghijklmnopqrstuvwxyz";
+	    String Alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	    
+	    char[] split = str.toCharArray();
+	    char[] alphaSplit = alpha.toCharArray();
+	    char[] AlphaSplit = Alpha.toCharArray();
+	    
+	    for(int i = 0; i < split.length; i++){
+	        if(split[i] == ' '){
+	            result += ' ';
+	        }
+	        for(int j = 0; j < alphaSplit.length; j++){
+	            if(split[i] == alphaSplit[j] || split[i] == AlphaSplit[j]){
+	                result += AlphaSplit[j];
+	                break;
+	            }
+	        }
+	    }
+	    
+	    return result;
+	}
+	public static String toLowerCase(String str){
+	    String result = "";
+	    
+	    String alpha = "abcdefghijklmnopqrstuvwxyz";
+	    String Alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	    
+	    char[] split = str.toCharArray();
+	    char[] alphaSplit = alpha.toCharArray();
+	    char[] AlphaSplit = Alpha.toCharArray();
+	    
+	    for(int i = 0; i < split.length; i++){
+	        for(int j = 0; j < AlphaSplit.length; j++){
+	            if(split[i] == AlphaSplit[j] || split[i] == alphaSplit[j]){
+	                result += alphaSplit[j];
+	                break;
+	            }
+	        }
+	    }
+	    
+	    return result;
+	}
+}

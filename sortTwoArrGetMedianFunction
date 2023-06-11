@@ -1,0 +1,67 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		int[] nums1 = {1, 3};
+		int[] nums2 = {2, 4};
+        System.out.println("Result: " + median(nums1, nums2));	
+	}
+	//
+	public static double median(int[] nums1,int[] nums2){
+	   String result = "";
+	   // combination of two array
+	   for(int i = 0; i < nums1.length; i++){
+	    result += nums1[i];
+	   }
+	   for(int i = 0; i < nums2.length; i++){
+	    result += nums2[i];
+	   }
+	   
+	   char[] c = result.toCharArray();
+	   int[] nums = new int[c.length];
+	   
+	   for(int i = 0; i < c.length; i++){
+	    nums[i] = Integer.parseInt(String.valueOf(c[i]));
+	   }
+	   
+	   //sorting the array
+	   int temp;
+	   for(int i = 0; i < nums.length; i++){
+	      for(int j = i+1; j < nums.length; j++) {
+	          if(nums[i] > nums[j]){
+	              temp = nums[i];
+	              nums[i] = nums[j];
+	              nums[j] = temp;
+	          }
+	      }
+	   }
+	   //get the median
+	  boolean isEven = false;
+	  int divide = nums.length / 2;
+	  
+	  if(nums.length%2 == 0){
+	    isEven = true;
+	  }
+	  
+	  double finalResult = 0;
+	  
+	 for(int i = 0; i < nums.length; i++){
+	    if(isEven){
+	        if(i == divide || i == divide-1){
+	            finalResult += nums[i];
+	        }
+	    }else{
+	        if(i == divide)
+	            finalResult += nums[i];
+	    }
+	 }	      
+	    
+	    if(isEven){
+	        finalResult /= 2;
+	    }
+	    
+	    
+	    return finalResult;
+	                      
+	}
+
+}

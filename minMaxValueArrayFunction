@@ -1,0 +1,43 @@
+public class Main {
+	public static void main(String[] args) {
+			int[][] arr = {
+		                    {1, 5, 9},
+		                    {4, 17, 10},
+		                    {9, 6, 15}
+	                    	};
+	        maxRow(arr);
+	        System.out.println();
+	        minCol(arr);
+	        
+	}
+	//
+	public static void maxRow(int[][] arr){
+	    int max = arr[0][0];
+	    System.out.print("Max Value Row: ");
+	    
+	    for(int i = 0; i < arr.length; i++){
+	        max = arr[i][0];
+	        for(int j = 0; j < arr[i].length; j++){
+	            if(arr[i][j] > max){
+	                max = arr[i][j];
+	            }
+	        }
+	        System.out.print(max +" ");
+	    }
+	}
+	//
+	public static void minCol(int[][] arr){
+	    int min = arr[0][0];
+	    System.out.print("Min Value Col: ");
+	    
+	    for(int i = 0; i < arr.length; i++){
+	        min = arr[i][0];
+	        for(int j = 0; j < arr[i].length; j++){
+	            if(arr[j][i] < min){
+	                min = arr[j][i];
+	            }
+	        }
+	        System.out.print(min +" ");
+	    }
+	}
+}

@@ -1,0 +1,23 @@
+public class Main {
+	public static void main(String[] args) {
+		int nums = 121;
+		
+		System.out.println(palindrome(nums));
+	}
+	public static boolean palindrome(int nums){
+	    int temp = nums;
+	    int rem, result = 0;
+	    boolean isPalin = false;
+	    while(nums != 0){
+	        rem = nums % 10;
+	        result = result * 10 + rem;
+	        nums /= 10;
+	    }
+	    
+	    if(temp == result){
+	        isPalin = true;
+	    }
+	    
+	    return isPalin;
+	}
+}

@@ -1,0 +1,28 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		
+		System.out.print("Enter a word: ");
+		String input = s.nextLine();
+		
+		System.out.println("SCORE: " + scoringWord(input));
+	
+	}
+	public static int scoringWord(String str){
+	    String alpha = " abcdefghijklmnopqrstuvwxyz";
+	    char[] cAlpha = alpha.toCharArray();
+	    char[] user = str.toCharArray();
+	    int result = 0;
+	    
+	    for(int i = 0; i < user.length; i++){
+	        for(int j = 0; j < cAlpha.length; j++){
+	            if(user[i] == cAlpha[j]){
+	                result += j;
+	                break;
+	            }
+	        }
+	    }
+	    return result;
+	}
+}

@@ -1,0 +1,58 @@
+public class Main {
+    public static void main(String[] args) {
+        String s = "([{}(){}])";
+        boolean isValid = validParen(s);
+        System.out.println("Is valid: " + isValid);
+    }
+
+    public static boolean validParen(String s) {
+        char[] split = s.toCharArray();
+        boolean isValid = false;
+        char[] open = {'(', '[', '{'};
+        char[] close = {')', ']', '}'};
+        int length = split.length-1;
+        int result = 0, i = 0;
+        
+        if(split.length%2 == 1 || split.length == 1){
+          isValid = false; 
+        }else{    
+           while(i  < split.length){
+                boolean pairFound = false;
+                
+                for(int j = 0; j < open.length; j++){
+                   if(split[i] == open[j]){
+                      
+                      if(split[i+1] == close[j]){
+                          System.out.println(split[i] + " " +split[i+1] + " | " + open[j] + " " + close[j]);
+                          i += 2;
+                          result++;
+                          pairFound = true;
+                          break;
+                      }else if(split[length] == close[j]){
+                          System.out.println(split[i] + " " + split[length] + " | " + open[j] + " " + close[j]);
+                          i++;
+                          length--;
+                          result++;
+                          pairFound = true;
+                          break;
+                      }  
+                   }        
+                }
+                
+                System.out.println(pairFound);
+                if(!pairFound){
+                  break;  
+                }
+           }
+           
+                 if(result == split.length/2){
+                 isValid = true;
+                 }
+        }
+        
+       
+        
+        
+        return isValid;
+    }
+}

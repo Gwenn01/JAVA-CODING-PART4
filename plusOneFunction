@@ -1,0 +1,36 @@
+public class Main {
+	public static void main(String[] args) {
+		int[] digits = {9};
+		
+		for(int i: plusOne(digits)){
+		    System.out.print(i);
+		}
+	}
+	public static int[] plusOne(int[] digits){
+	    int[] temp = new int[digits.length];
+	    
+	    String result = "";
+	    for(int i = 0; i < digits.length; i++){
+	        result += digits[i];
+	    }
+	    
+	    int convert = Integer.parseInt(result);
+	    convert += 1;
+	    String str = "";
+	    str += convert;
+	    System.out.println(str);
+	    
+	    char[] split2 = str.toCharArray();
+	    
+	    if(digits.length == 1){
+	       temp = new int[digits.length + 1];
+	       temp[0] = Character.getNumericValue(split2[0]);
+	        temp[1] = Character.getNumericValue(split2[1]);
+	    }else{
+	    for(int i = 0; i < temp.length; i++){
+	        temp[i] = Character.getNumericValue(split2[i]);
+	    }
+	    }
+	    return temp;
+	}
+}

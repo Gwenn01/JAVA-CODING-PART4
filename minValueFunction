@@ -1,0 +1,31 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.print("Input first Number: ");
+		int num1 = s.nextInt();
+		System.out.print("Input second Number: ");
+		int num2 = s.nextInt();
+		System.out.print("Input third Number: ");
+		int num3 = s.nextInt();
+		
+		System.out.println("Min Value" + compute(num1, num2, num3));
+		
+	}
+	public static int compute(int num1, int num2, int num3){
+	    int[] arr = new int[3];
+	    arr[0] = num1;
+	    arr[1] = num2;
+	    arr[2] = num3;
+	    
+	    int min = num1;
+	    
+	    for(int i = 0; i < arr.length; i++){
+	        if(arr[i] < min){
+	           min = arr[i];
+	        }
+	    }
+	    
+	    return min;
+	}
+}

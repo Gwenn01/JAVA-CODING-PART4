@@ -1,0 +1,23 @@
+public class Main {
+	public static void main(String[] args) {
+		int num = 38;
+        
+        System.out.println(addDigits(num));
+	}
+	public static int addDigits(int num){
+	    int rem, sum = 0;
+	    
+	    do{
+	       sum = 0;
+	       while(num != 0){
+	           rem = num % 10;
+	           sum += rem; 
+	           num /= 10;
+	       }
+	       
+	       num = sum;
+	    }while(sum > 9);
+	    
+	    return sum;
+	}
+}

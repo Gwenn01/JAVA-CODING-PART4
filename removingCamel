@@ -1,0 +1,26 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		
+		System.out.print("Enter String: ");
+	    String str = s.nextLine();
+	    
+	    System.out.print("Remove Camel Casting: " + camel(str));
+		
+		
+	}
+	public static String camel(String str){
+	    char[] c = str.toCharArray();
+	    String result = "";
+	    
+	    for(int i = 0; i < c.length; i++){
+	        if(Character.isUpperCase(c[i])){
+	            result += " ";
+	        }
+	         result += c[i];
+	    }
+	    
+	   return result; 
+	}
+}

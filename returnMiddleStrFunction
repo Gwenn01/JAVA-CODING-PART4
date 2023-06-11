@@ -1,0 +1,22 @@
+public class Main {
+	public static void main(String[] args) {
+		String str = "hello";
+		
+		System.out.println("Mid: " + mid(str));
+		
+	}
+	public static String mid(String str){
+	    char[] c = str.toCharArray();
+	    int mid = c.length/2;
+	    String result = "";
+	    
+	    if(c.length%2 == 0){
+	        result += c[mid-1];
+	        result += c[mid];
+	    }else{
+	        result += c[mid];
+	    }
+	    
+	    return result;
+	}
+}

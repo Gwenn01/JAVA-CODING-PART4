@@ -1,0 +1,26 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		Scanner s =  new Scanner(System.in);
+		System.out.print("Enter a number to find the root of sum:  ");
+		int num = s.nextInt();
+		
+		System.out.print(sumRoot(num));
+	}
+	
+	public static int sumRoot(int num){
+	    int rem, sum = 11;
+	    while(sum > 9){
+	         sum = 0;
+	        while(num != 0){
+	            rem = num%10;
+	            sum += rem;
+	            num /= 10;
+	        }
+	        num = sum;
+	    }
+	    
+	 return sum;
+	}
+
+}

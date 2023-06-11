@@ -1,0 +1,50 @@
+public class Main {
+	public static void main(String[] args) {
+		String s = "abcbbdab";
+        
+        palindromeSub(s);
+	}
+	//
+	public static void palindromeSub(String str){
+	    String temp = str;
+	    char[] c = str.toCharArray();
+	    int length = c.length-1;
+	    String reverse = "";
+	    int example = length;
+	     
+	     System.out.println("Checking the Palindrome: ");
+	     //
+	    while(length >= 0){
+	     reverse = "";
+	     //revese
+	    for(int i = length; i >= 0; i--){
+	        reverse += c[i];
+	    }
+	    //print the string reverse
+	     System.out.println("String: " + temp);
+	     System.out.println("Reverse: " + reverse);
+	     System.out.println();
+	     //check if equals
+	    if(temp.equals(reverse)){
+	        break;
+	    }
+	    // decreament the string
+	     temp = "";
+         c[length] = ' ';
+         c[0] = ' ';
+	    for(int i = 0; i < length; i++){
+	       if(c[i] != ' '){
+	         temp += c[i];
+	       }
+	    }
+	    
+	     c = temp.toCharArray();   
+	      length = c.length-1;
+	  }
+	  //
+	  
+	  
+	  System.out.println();
+	  System.out.println("The palindrome in SubString is  = " + reverse);
+	}
+}}

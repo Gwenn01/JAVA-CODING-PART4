@@ -1,0 +1,48 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		
+		System.out.print("Enter A to F: ");
+		String day = s.nextLine();
+		
+		System.out.println(week(day));
+	}
+	public static String week(String day){
+	    String result = "";
+	    switch(day){
+	        case "a":
+	        case "A":
+	            result = "Its Monday";
+	         break;
+	         case "b":
+	        case "B":
+	            result = "Its Tuesday";
+	         break;
+	           case "c":
+	        case "C":
+	            result = "Its Wenesday";
+	         break;
+	         case "d":
+	        case "D":
+	            result = "Its Thurday";
+	         break;
+	         case "e":
+	        case "E":
+	            result = "Its Friday";
+	         break;
+	         case "f":
+	        case "F":
+	            result = "Its Saturday";
+	         break;
+	           case "g":
+	        case "G":
+	            result = "Its Saturday";
+	         break;
+	         default:
+	             result = "Invalid Letter!!";
+	    }
+	    
+	    return result;
+	}
+}

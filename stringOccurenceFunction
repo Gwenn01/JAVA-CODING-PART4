@@ -1,0 +1,36 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		String str = " ";
+		char letter = ' ';
+		
+	do{
+		System.out.print("Enter a String: ");
+		str = scan.nextLine();
+		System.out.print("Enter a in your string letter: ");
+		letter = scan.next().charAt(0);
+		
+		
+		System.out.println("Occurence: " + occurence(str, letter));
+		if(occurence(str, letter) == 0){
+		    System.out.println("Try Again: ");
+		}
+		scan.nextLine();
+	}while(occurence(str, letter) == 0);
+		
+	}
+	////
+	public static int occurence(String str, char letter){
+	    int result = 0;
+	    char[] charStr = str.toCharArray();
+	    
+	    for(int i = 0; i < charStr.length; i++){
+	        if(charStr[i] == letter){
+	            result++;
+	        }
+	    }
+	    
+	 return result;   
+	}
+}

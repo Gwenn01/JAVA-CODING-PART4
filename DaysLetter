@@ -1,0 +1,52 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		
+		System.out.print("Enter a Letter between A to G: ");
+		String day = s.nextLine();
+		
+		switch(toUpperCase(day)){
+		    case "A":
+		        System.out.println("Its Monday");
+		     break;
+		     case "B":
+		        System.out.println("Its Tuesday");
+		     break;
+		     case "C":
+		        System.out.println("Its Wednesday");
+		     break;
+		     case "D":
+		        System.out.println("Its Thursday");
+		     break;
+		     case "E":
+		        System.out.println("Its Friday");
+		     break;
+		     case "F":
+		        System.out.println("Its Saturday");
+		     break;
+		     case "G":
+		        System.out.println("Its Sunday");
+		     break;
+		     default:
+		         System.out.println("Invalid Letter");
+		}
+		
+	}
+	public static String toUpperCase(String str){
+	      String result = "";
+	      String alpha = "abcdefghijklmnopqrstuvwxyz";
+	    String Alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	    
+	    char[] alphaSplit = alpha.toCharArray();
+	    char[] AlphaSplit = Alpha.toCharArray();
+	    
+    	
+	    for(int i = 0 ; i < alphaSplit.length; i++){
+	        if(str.charAt(0) == alphaSplit[i] || str.charAt(0) == AlphaSplit[i]){
+	            result += AlphaSplit[i];
+	        }
+	    }
+	    return result;
+	}
+}

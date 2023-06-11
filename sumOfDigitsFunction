@@ -1,0 +1,17 @@
+public class Main {
+	public static void main(String[] args) {
+		int nums = 257;
+		System.out.println("Sum of digits: " + sumOfDigits(nums));
+	}
+	public static int sumOfDigits(int nums){
+	    int rem, sum = 0;
+	    
+	    while(nums != 0){
+	        rem = nums % 10;
+	        sum += rem;
+	        nums /= 10;
+	    }
+	    
+	    return sum;
+	}
+}

@@ -1,0 +1,42 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+	    Scanner s = new Scanner(System.in);
+	    System.out.print("Enter the Length: ");
+	    int length = s.nextInt();
+	    int[] array = new int[length];
+	    inputs(array);
+	    delete(array);
+	    
+	    
+	}
+	public static void inputs(int[] array){
+	    Scanner s = new Scanner(System.in);
+	    for(int i = 0; i < array.length; i++){
+	        System.out.print("Enter Element" + (i+1) + ": ");
+	        array[i] = s.nextInt();
+	    }
+	}
+	public static void delete(int[] array){
+	    Scanner s = new Scanner(System.in);
+	    System.out.print("Enter a index to be delete: ");
+	    int del = s.nextInt();
+	    int length = array.length;
+	    if(del < array.length){
+	        length = array.length-1;
+	    }
+	    
+	    int[] temp = new int[length];
+	    
+	    for(int i = del; i < array.length-1; i++){
+	            array[i] = array[i+1];
+	    }
+	   
+	   for(int i = 0; i < temp.length; i++){
+	       temp[i] = array[i];
+	   }
+	    
+	    System.out.println(Arrays.toString(temp));
+	    
+	}
+}

@@ -1,0 +1,59 @@
+public class Main {
+	public static void main(String[] args) {
+		String num = "1925414525";
+		
+		System.out.println(numToAlpha(num));
+	}
+	
+	public static String numToAlpha(String num){
+	    String alpha = "abcdefghijklmnopqrstuvwxyz";
+	    char[] a = alpha.toCharArray();
+	    char[] n = num.toCharArray();
+	    String result = "";
+	    int n1;
+	    int sum;
+	    String combine = "";
+	   
+	   for(int i = 0; i < n.length;){
+	           sum = 0;
+	           combine = "";
+	           combine += n[i];
+	           combine += n[i+1];
+	           sum = Integer.parseInt(combine);
+	           n1 = Character.getNumericValue(n[i]);
+	           if(sum <= 26){
+	               for(int k = 0; k < a.length; k++){
+	                   if(sum == k+1){
+	                       result += a[k];
+	                       i += 2;
+	                       break;
+	                   }
+	               }
+	           }else{
+	               for(int k = 0; k < a.length; k++){
+	                  if(n1 == k+1){
+	                      result += a[k];
+	                      i++;
+	                       break;
+	                  }
+	               } 
+	           } 
+	           
+	           if(i == n.length-1){
+	               break;
+	           }
+	   }
+	   
+	   return result;
+	}
+}} 
+	           } 
+	           
+	           if(n[i+1] == n[n.length-1]){
+	               break;
+	           }
+	   }
+	   
+	   return result;
+	}
+}

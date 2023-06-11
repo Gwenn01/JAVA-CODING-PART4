@@ -1,0 +1,23 @@
+public class Main {
+	public static void main(String[] args) {
+		int[] nums = {3, -1, 1, 2, 5};
+		int ans = firstMissingPositive(nums);
+		System.out.println(ans);
+		
+	}
+	public static int firstMissingPositive(int[] nums){
+	   int result = 1;	   
+	   int i = 0;
+	   
+	   while(i < nums.length){
+	      if(result == nums[i]) {
+	          i = 0;
+	          result++;
+	      }else{
+	        i++; 
+	     } 	       
+	   }
+	   	    
+	    return result;
+	}
+}

@@ -1,0 +1,37 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		
+		System.out.print("Enter X1: ");
+		double x1 = s.nextDouble();
+		System.out.print("Enter X2: ");
+		double x2 = s.nextDouble();
+		System.out.print("Enter S1: ");
+		double s1 = s.nextDouble();
+		System.out.print("Enter S2: ");
+		double s2 = s.nextDouble();
+		System.out.print("Enter N1: ");
+		double n1 = s.nextDouble();
+		System.out.print("Enter N2: ");
+		double n2 = s.nextDouble();
+		
+		System.out.println("Cal Value: " + compute(x1,x2,s1,s2,n1,n2));
+		
+	}
+	public static double compute(double x1, double x2, double s1, double s2, double n1, double n2){
+	   
+	    double result1, result2, result3, result4, result5, finalResult; 
+	    
+	    
+	    result1 = x1 - x2;
+	    result2 = ((n1 - 1)*(s1 * s1) + (n2 -1)*(s2 * s2)) / (n1 + n2 - 2);
+	    result3 = (n1 + n2) / (n1 * n2);
+	    result4 = result2 * result3;
+	    result5 = Math.sqrt(result4);
+	    
+	    finalResult = result1 / result5;
+	   
+	 return finalResult;
+	}
+}

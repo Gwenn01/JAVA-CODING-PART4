@@ -1,0 +1,17 @@
+public class Main {
+	public static void main(String[] args) {
+		String word = "Hello_Wolrd_Java";
+		
+		System.out.println(camelCasing(word));
+	}
+	public static String camelCasing(String str){
+	    char[] split = str.toCharArray();
+	    String result = "";
+	    for(int i = 0; i < split.length; i++){
+	        if(split[i] != '_' && split[i] != '-'){
+	            result += split[i];
+	        }
+	    }
+	    return result;
+	}
+}

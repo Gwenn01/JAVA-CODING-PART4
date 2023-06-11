@@ -1,0 +1,91 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+	   
+	   Scanner s = new Scanner(System.in);
+	   System.out.print("Enter the length (x) (y) : ");
+	   int length = s.nextInt();
+	   
+	   regression(length);
+	   
+	}
+	public static void regression(int length){
+	   Scanner s = new Scanner(System.in);
+	   double n = length;
+	   double a, b, Ex = 0, Ey = 0, Ex2 = 0, XY = 0, Y;
+	   double r1, r2, r3, r4;
+	   
+	   
+	   double[] x = new double[length];
+	   double[] y = new double[length];
+	    double[] x2 = new double[length];
+	   double[] xy = new double[length];
+	   //
+	   System.out.println("===Enter x===");
+	   for(int i = 0; i < x.length; i++){
+	       System.out.print("Value" + (i+1) + " : ");
+	       x[i] = s.nextDouble();
+	       Ex += x[i];
+	   }
+	   System.out.println("===Total of Ex: " + Ex);
+	   System.out.println();
+	  // 
+	   System.out.println("===Enter y===");
+	   for(int i = 0; i < x.length; i++){
+	      System.out.print("Value" + (i+1) + " : ");
+	       y[i] = s.nextDouble();
+	       Ey += y[i];
+	   }
+	   System.out.println("===Total of Ey: " + Ey);
+	   System.out.println();
+	   //
+	   System.out.println("===X2===");
+	   for(int i = 0; i < x2.length; i++){
+	       x2[i] = (x[i] * x[i]);
+	       System.out.println("Value X2" + (i+1) + " : " + x2[i]);
+	       Ex2 += x2[i];
+	   }
+	   System.out.println("===Total of Ex2: " + Ex2);
+	   System.out.println();
+	   //
+	   System.out.println("===X*Y===");
+	   for(int i = 0; i < xy.length; i++){
+	       xy[i] = (x[i] * y[i]);
+	       System.out.println("Value X*Y" + (i+1) + " : " + xy[i]);
+	       XY += xy[i];
+	   }
+	   System.out.println("===Total of X*Y " + XY);
+	   System.out.println();
+	   //
+	   
+	   r1 = ((Ey) * (Ex2)) - ((Ex) * (XY));
+	   r2 = ((n) * (Ex2)) - ((Ex) * (Ex));
+	   System.out.println(r1 + "   |  " + r2);
+	   a = r1 / r2;
+	   System.out.println("=============");
+	   System.out.println("a = " + a);
+	   System.out.println("=============");
+	   System.out.println();
+	   
+	   r3 = ((n) * (XY)) - ((Ex) * (Ey));
+	   r4 = ((n) * (Ex2)) - ((Ex) * (Ex));
+	   System.out.println(r3 + "   |  " + r4);
+	   b = r3 / r4; 
+	   System.out.println("=============");
+	   System.out.println("b = " + b);
+	   System.out.println("=============");
+	   System.out.println();
+	   
+	    System.out.print("Enter the x Prediction: ");
+	    double p = s.nextDouble();
+	    System.out.println();
+	    Y = ((b) * (p)) + a;
+	    System.out.println("y = " + Y);
+	    System.out.println();
+	      
+	          
+	   System.out.println("=============");
+	   System.out.println("= " + Math.round(Y));
+	   System.out.println("=============");
+	}
+}

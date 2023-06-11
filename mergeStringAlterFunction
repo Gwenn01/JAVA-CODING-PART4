@@ -1,0 +1,30 @@
+public class Main {
+	public static void main(String[] args) {
+		String word1 = "abc";
+		String word2 = "pqr";
+		
+		System.out.println("Result " + mergeString(word1, word2));
+	}
+	public static String mergeString(String word1, String word2){
+	    char[] c1 = word1.toCharArray();
+	    char[] c2 = word2.toCharArray();
+	    
+	    String result = "";
+	    String sum = "";
+	    
+	    for(int i = 0; i < c1.length; i++){
+	        sum += c1[i] +" " + c2[i];
+	        
+	    }
+	    
+	    char[] res = sum.toCharArray();
+	    
+	    for(int i = 0; i < res.length; i++){
+	        if(res[i] != ' '){
+	            result += res[i];
+	        }
+	    }
+	    
+	    return result;
+	}
+}

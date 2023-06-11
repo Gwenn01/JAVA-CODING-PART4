@@ -1,0 +1,29 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		double x = 2.0;
+		int n = -3;
+		
+		System.out.println(pow(x, n));
+	}
+	public static double pow(double x, int n){
+	    double result = x;
+	    
+	    if(n < 0){
+	        n = Math.abs(n);
+	        n += 1;
+	        while(n != 0){
+	            result = result / 2;
+	            n--;
+	        }
+	        
+	    }else{
+    	    while(n != 1){
+    	        result = result * x;
+    	        n--;
+    	    }
+	  }
+	    
+	    return result;
+	}
+}

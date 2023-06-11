@@ -1,0 +1,20 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		
+	    String str = "abcde";	
+		
+		splitString(str);
+	}
+	public static void splitString(String str){
+	    String result = str;
+	    char[] c = str.toCharArray();
+	    int isOdd = c.length;
+	    if(isOdd%2 == 1){
+	        result += "_";
+	    }
+	    
+	    System.out.println(result);
+	}
+}

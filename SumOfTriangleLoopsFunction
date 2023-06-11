@@ -1,0 +1,31 @@
+
+public class Main {
+	public static void main(String[] args) {
+    
+    sumOfTriangle();
+	}
+	public static void sumOfTriangle(){
+	    int n = 4;
+	    
+	    int sum = 0;
+	    int k = 1;
+	    
+	    for(int i = 0; i <= 5; i++){
+	        for(int j = 0; j <= i; j++){
+	            System.out.print(k + " ");
+	            if(i == j){
+	             sum += k; 
+	            }
+	            k++;
+	        }
+	        System.out.println();
+	         if(i+1 == n){
+	            break;
+	        }
+	    }
+	    
+	    System.out.println();
+	    System.out.println("Sum: " + sum);
+	    
+	}
+}

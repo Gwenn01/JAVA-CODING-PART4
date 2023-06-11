@@ -1,0 +1,23 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		
+		System.out.print("Enter a first number: ");
+		int num1 = s.nextInt();
+		System.out.print("Enter a second number: ");
+		int num2 = s.nextInt();
+		
+		System.out.println(num1 + " + " + num2 + " = " + addNum(num1, num2));
+		
+	}
+	//
+	public static int addNum(int num1, int num2){
+	    int result = num2;
+	    for(int i = num1; i > 0; i--){
+	        result++;
+	    }
+	    
+	   return result;
+	}
+}

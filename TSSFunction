@@ -1,0 +1,48 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.println("TSS Calculator");
+		System.out.print("Enter how many Group: ");
+		int length = s.nextInt();
+		
+		tss(length);
+		
+	}
+	public static void tss(int length){
+	    Scanner s = new Scanner(System.in);
+	    double[] groups = new double[length];
+	    double[] groupSquared = new double[length];
+	    double tss1 = 0, tss2 = 0, result;
+	      
+	      //Input
+	      for(int i = 0; i < groupSquared.length; i++){
+	        System.out.print("Enter Squared Group" + (i+1) + " : ");
+	        groupSquared[i] = s.nextDouble();
+	    }
+	      for(int i = 0; i < groups.length; i++){
+	        System.out.print("Enter Group" + (i+1) + " : ");
+	        groups[i] = s.nextDouble();
+	    }
+	    
+	    
+	    System.out.print("Enter N: ");
+	    double N = s.nextInt();
+	    
+	    // compute
+	    
+	    for(int i = 0; i < groups.length; i++){
+	        tss1 += groupSquared[i];
+	    }
+	     for(int i = 0; i < groups.length; i++){
+	        tss2 += groups[i];
+	    }
+	    tss2 = (tss2 * tss2) / N;
+	    
+	    result = tss1 - tss2;
+	    
+	    System.out.println(tss1 + "    " + tss2);
+	    System.out.println("TSS = " + result);
+	    
+	}
+}

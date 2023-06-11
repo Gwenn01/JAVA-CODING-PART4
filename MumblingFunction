@@ -1,0 +1,35 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		
+		System.out.print("Enter String to Mumbling: ");
+		String str = s.nextLine();
+		
+		System.out.print(mumbling(str));
+	}
+	public static String mumbling(String str){
+	    String alpha = "abcdefghijklmnopqrstuvwxyz";
+	    char[] cInput = str.toCharArray();
+	    char[] cAlpha = alpha.toCharArray();
+	    String result = "";
+	    
+	    
+	    for(int i = 0; i < cInput.length; i++){
+	        for(int j = 0; j < cAlpha.length; j++){
+	            if(cInput[i] == cAlpha[j]){
+	                for(int k = 0; k <= i; k++){
+	                    if(k == 0){
+	                        result += Character.toUpperCase(cInput[i]);
+	                    }else{
+	                        result += cInput[i];
+	                    }
+	                }
+	                result += " ";
+	            }
+	        }	        
+	    }
+	    
+	    return result;
+	}
+}

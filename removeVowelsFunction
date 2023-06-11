@@ -1,0 +1,32 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.print("Enter comments: ");
+		String com = scan.nextLine();
+		System.out.println(remVowels(com));
+	}
+	
+	public static String remVowels(String com){
+	    String vowels = "aeiou", Vowels = "AEIOU", result = "";
+	    char[] character = com.toCharArray();
+	    char[] charVowels = vowels.toCharArray();
+	    char[] CharVowels = Vowels.toCharArray();
+	    for(int i = 0; i < character.length; i++){
+	        for(int j = 0; j < charVowels.length; j++){
+	            if(character[i] == charVowels[j] || character[i] == CharVowels[j]){
+	                character[i] = '0';
+	            }            
+	        }
+	    }
+	    for(int i = 0; i < character.length; i++){
+	        if(character[i] != '0'){
+	            result += character[i];
+	        }
+	    }
+	    
+	    return result;
+	}
+	
+}

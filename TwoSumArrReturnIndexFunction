@@ -1,0 +1,32 @@
+public class Main {
+	public static void main(String[] args) {
+		int[] nums = {2, 7, 11, 15, 3, 4};
+		int target = 9;
+		for(int i = 0; i < nums.length; i++){
+		    System.out.print(nums[i] + " ");
+		}
+		System.out.println();
+		System.out.println("Target = " + target);
+		System.out.println(twoSum(nums, target));
+	}
+	//
+	public static String twoSum(int[] nums, int target){	 
+	   int sum; 
+	   boolean isEmty = true;
+	   String result = "";
+	    for(int i = 0; i < nums.length; i++) {
+	        for(int j = i+1; j < nums.length; j++){
+	            sum = nums[i] + nums[j];
+	            if(sum == target){
+	                result = "[" + i + " " + j + "]";
+	                isEmty = false;
+	                break;
+	            }
+	        }	        
+	    }	    
+	    if(isEmty){
+	        System.out.println("Emty target!!");
+	    }
+	   return result; 
+	}
+}

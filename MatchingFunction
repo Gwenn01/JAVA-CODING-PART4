@@ -1,0 +1,44 @@
+public class Main {
+	public static void main(String[] args) {
+		String s = "aa";
+		String p = "aa";
+		
+		System.out.println("Is Matches: " + matching(s, p));
+	}
+	public static boolean matching(String str, String ptr){
+	    char[] s = str.toCharArray();
+	    char[] p = ptr.toCharArray();
+	    String r = "";
+	    boolean isLetterDivisible = false;
+	    boolean isMatches = false;
+	    boolean result = false;
+	    
+	    for(int  i = 0; i < p.length; i++){
+	        for(int j = 0; j < s.length; j++){
+	           if(p[i] == s[j]){
+	               isLetterDivisible = true;
+	           }
+	        }
+	    }
+	    for(int  i = 0; i < p.length; i++){
+	           if(p[i] == s[i]){
+	               r += p[i];
+	        }
+	    }
+	    
+	    if(r.equals(ptr)){
+	        isMatches = true;
+	    }
+	    for(int i = 0; i < p.length; i++){
+	        if(p[i] == '*' || p[i] == '.'){
+	            isMatches = true;
+	        }	        
+	    }
+	    
+	    if(isLetterDivisible && isMatches) {
+	        result = true;
+	    }
+	    
+	    return result;
+	}
+}

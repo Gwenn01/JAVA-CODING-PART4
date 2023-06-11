@@ -1,0 +1,25 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		
+		System.out.print("Enter Integer: ");
+		int num = s.nextInt();
+		
+		System.out.println("Result: " + round(num));
+	}
+	public static int round(int num){
+	    int result = 0;
+	    int i = 1, multiply;
+	    while(true){
+	        multiply = 5 * i;
+	        if(multiply >= num){
+	            result = multiply;
+	            break;
+	        }
+	        i++;
+	    }
+	    
+	   return result; 
+	}
+}

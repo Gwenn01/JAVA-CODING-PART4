@@ -1,0 +1,18 @@
+public class Main {
+	public static void main(String[] args) {
+		int nums = 123;
+		
+		System.out.println("Reverse: " + reverse(nums));
+	}
+	public static int reverse(int nums){
+	    int rem, result = 0;
+	    
+	    while(nums != 0){
+	        rem = nums % 10;
+	        result = result * 10 + rem ;
+	        nums /= 10;
+	    }
+	    
+	    return result;
+	}
+}

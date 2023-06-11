@@ -1,0 +1,91 @@
+import java.util.*;
+public class Main {
+	public static double k = 5.00;
+	public static double b = 5.00;
+	public static double p = 76.00;
+	public static double f = 2.50;
+	public static double s = 10.50;
+	public static int[] yourOrder = new int[5];
+	public static double totalCost;
+	//
+	public static void main(String[] args) {
+		display();
+		item();
+		System.out.println();
+		System.out.println("Your order: ");
+		order();
+		System.out.println();
+		System.out.println("Total cost: PHP" + totalCost);
+	}
+	//
+	public static void display(){
+	    System.out.println("Welcome to restaurant! Please enter the number of each item you want to order: \n");
+	    System.out.println("1. Kwek-kwek");
+	    System.out.println("2. Beta max");
+	    System.out.println("3. Pares");
+	    System.out.println("4. French fries");
+	    System.out.println("5. Sasgot' Gulaman");
+	    System.out.println();
+	}
+	//
+	public static void item(){
+	  Scanner scan = new Scanner(System.in);
+	 for(int i = 1; i <= 3; i++){
+	    if(i == 1){
+	    System.out.print("Enter the number of the first item: ");
+	    }else if(i == 2){
+	     System.out.print("Enter the number of the second item: ");  
+	    }else if(i == 3){
+	     System.out.print("Enter the number of the third item: ");   
+	    }
+	    int item = scan.nextInt();   
+	    switch(item){
+	        case 1:
+	        totalCost += k;
+	        yourOrder[0]++;	  
+	        break;
+	        
+	        case 2:
+	        totalCost += b;
+	        yourOrder[1]++;	 
+	        break;
+	        
+	        case 3:
+	        totalCost += p;
+	        yourOrder[2]++;	
+	        break;
+	        
+	        case 4:
+	        totalCost += f;
+	        yourOrder[3]++;	
+	        break;
+	        
+	        case 5:
+	        totalCost += s;
+	        yourOrder[4]++;	  
+	        break;
+	     }   
+	 }   
+}	 
+	 
+	public static void order(){
+	   for(int i = 0; i < yourOrder.length; i++){
+	        if(yourOrder[0] != 0){
+	         System.out.println("--Kwek-kwek x" + yourOrder[0]);
+	         yourOrder[0] = 0;
+	    }else if(yourOrder[1] != 0){
+	         System.out.println("--Beta max x" + yourOrder[1]);
+	         yourOrder[1] = 0;   
+	    }else if(yourOrder[2] != 0){
+	         System.out.println("--Pares x" + yourOrder[2]);   
+	         yourOrder[2] = 0;   
+	    }else if(yourOrder[3] != 0){
+	         System.out.println("--French Fries x" + yourOrder[3]);   
+	         yourOrder[3] = 0;   
+	    }else if(yourOrder[4] != 0){
+	         System.out.println("--Sasgot' Gulaman' x" + yourOrder[4]); 
+	         yourOrder[4] = 0;   
+	    }	    
+	}
+  }	
+}

@@ -1,0 +1,19 @@
+public class Main {
+	public static void main(String[] args) {
+		String str = "Hello World";
+		
+		System.out.println(charAt(str, 4));
+	}
+    public static char charAt(String str, int index){
+        char[] split = str.toCharArray();
+        char result = ' ';
+        for(int i = 0; i < split.length; i++){
+            if(i == index){
+                result = split[i];
+                break;
+            }
+        }
+        
+        return result;
+    }
+}

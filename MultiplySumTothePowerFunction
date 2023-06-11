@@ -1,0 +1,49 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		// n = 89, 8power1 + 9power2 = 89
+		System.out.print("Enter a number: ");
+		int num = s.nextInt();
+	
+		System.out.print("Result: "+ compute(num));
+	}
+	//
+	public static int reverse(int num){
+	    int temp = num, rem;
+	    String result = "";
+	    while(temp != 0){
+	        rem = temp % 10;
+	        result += rem;
+	        temp /= 10;
+	    }
+	    int numResult = Integer.parseInt(result);
+	    return numResult;
+	}
+	//
+	public static int compute(int num){
+	    int temp = reverse(num);
+	    int rem, multiply, sum = 0;
+	    int count = 1;
+	    
+	    while(temp != 0){
+	        rem = temp % 10;
+	        multiply = rem;
+	         if(count == 1){
+	                multiply = 1 * rem;
+	                sum += multiply;
+	         }else{
+	            int i = 2;
+	            while(i <= count){
+	            multiply *= rem;
+	            sum += multiply;
+	            i++;
+	            }
+	        }
+	        count++;
+	        temp /= 10;
+	    }
+	    return sum;
+	}
+	//
+}

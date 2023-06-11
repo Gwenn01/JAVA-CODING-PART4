@@ -1,0 +1,39 @@
+public class Main {
+	public static void main(String[] args) {
+		String s = "PAYPALSHIRING";
+		int rows = 4;
+		
+		zizagConversation(s,rows);
+	}
+	
+	public static void zizagConversation(String s, int rows){
+	    char[] c = s.toCharArray();
+	    int col = 10, row = rows;
+	    char[][] zigzag = new char[row][col];
+	    int k = 0;
+	    String result = "";
+	    
+	   for(int i = 0; i < zigzag.length; i++){
+	       for(int j = 0; j < zigzag.length; j++){
+	          if(k != c.length-1){
+	                   zigzag[j][i] = c[k];
+	                   k++;
+	          }
+	       }
+	   }
+	    
+	   
+	   for(int i = 0; i < zigzag.length; i++){
+	       for(int j = 0; j < zigzag.length; j++){
+	              System.out.print(zigzag[i][j]);
+	              result += zigzag[i][j];
+	           }
+	           System.out.println();
+	       }
+
+
+      System.out.println();
+      System.out.println("Result: " + result);
+
+	}	
+}

@@ -1,0 +1,35 @@
+public class Main {
+	public static void main(String[] args) {
+		char[] letter = {'c', 'd', 'e', 'z', 'f', 'a', 'b'};	
+		sortLetter(letter);
+		
+	}
+	//
+	public static void sortLetter(char[] letter){
+	    String alphaBet = "abcdefghijklmnopqrstuv";
+	    char[] alpha = alphaBet.toCharArray();
+	    char temp;
+	    
+	    System.out.print("Normal Array: ");
+	    for(int i = 0; i < letter.length; i++){
+	        System.out.print(letter[i] + " ");
+	    }
+	    System.out.println();
+	    
+	    for(int i = 0; i < alpha.length; i++){
+	        for(int j = 0; j < letter.length; j++){
+	            if(alpha[i] == letter[j]){
+	                temp = letter[i];
+	                letter[i] = letter[j];
+	                letter[j] = temp;
+	            }
+	        }
+	    }
+	    System.out.println();
+	    System.out.print("Sort Array: ");
+	    for(int i = 0; i < letter.length; i++){
+	        System.out.print(letter[i] + " ");
+	    }
+	    
+	}
+}

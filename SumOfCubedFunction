@@ -1,0 +1,20 @@
+public class Main {
+	public static void main(String[] args) {
+		int n = 2;
+		int cubed = cubed(n);
+		System.out.println("Sum of Cubed: " + cubed);
+	}
+	public static int cubed(int n){
+	    int sum = 0, multiply;
+	    
+	    for(int i = 1; i <= n; i++){
+	        multiply = i;
+	        for(int j = 0; j < 2; j++){
+	            multiply *= i;
+	        }
+	        sum += multiply;
+	    }
+	    
+	    return sum;
+	}
+}

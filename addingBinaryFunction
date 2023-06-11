@@ -1,0 +1,33 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		
+		System.out.print("Enter a first binary: ");
+		int binary1 = s.nextInt();
+			System.out.print("Enter a second binary: ");
+		int binary2 = s.nextInt();
+		
+		System.out.println("Result " + addBinary(binary1, binary2));
+	}
+	//
+	public static String addBinary(int binary1, int binary2){
+	    String result = "";
+	    int rem1, rem2, binary3 = 0;
+	    
+	    while(binary1 != 0){      
+	        rem1 = binary1 % 10;
+	        rem2 = binary2 % 10;
+	        if(rem1 == rem2){
+	            result += 0;
+	        }else{
+	            result += 1;
+	        }
+	        binary1 /= 10;
+	        binary2 /= 10;
+	    }
+	    
+	   return result; 
+	}
+	//
+}

@@ -1,0 +1,27 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		
+		System.out.print("Enter letter: ");
+		String letter = s.nextLine();
+		System.out.print("Enter symbol: ");
+		String symbol = s.nextLine();
+		
+		result(letter, symbol);
+	}
+	public static void result(String letter, String symbol){
+	    char[] CharLet = letter.toCharArray();
+	    char[] CharSym = symbol.toCharArray();
+	    
+	    int i = 0, j = CharSym.length-1;
+	     
+	     while(i < CharLet.length){
+	         System.out.println(CharLet[i] + " " + CharSym[j] + " | " + CharSym[i] + " " + CharLet[j]);
+	         i++;
+	         j--;
+	     }
+	    
+	    
+	}
+}

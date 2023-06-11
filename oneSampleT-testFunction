@@ -1,0 +1,28 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.print("Enter M: ");
+		double m = scan.nextDouble();
+		System.out.print("Enter X: ");
+		double x = scan.nextDouble();
+		System.out.print("Enter S: ");
+		double s = scan.nextDouble();
+		System.out.print("Enter N: ");
+		double n = scan.nextDouble();
+		
+		System.out.println("Cal Value: " + compute(m, x, s, n));
+		
+	}
+	public static double compute(double m, double x, double s, double n){
+	    double result1, result2, finalResult;
+	    
+	    result1 = (x - m) / s;
+	    result2 = Math.sqrt(n);
+	    finalResult = result1 * result2;
+	    
+	    
+	    return finalResult;
+	}
+}

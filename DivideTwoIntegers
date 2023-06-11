@@ -1,0 +1,38 @@
+public class Main {
+	public static void main(String[] args) {
+		int dividend = 10;
+		int divisor = -2;
+		
+		System.out.println(divide(dividend, divisor));
+	}
+	public static int divide(int dividend, int divisor){
+	    int temp = divisor;
+	    int result = 0;
+	    String convert = "";
+	    
+	    if(divisor < 0){
+	        convert += divisor;
+	        char[] c = convert.toCharArray();
+	        int num = Character.getNumericValue(c[1]);
+	        temp = num;
+	        
+	        while(num <= dividend){
+    	        result++;
+    	        num += temp;
+    	    }
+    	    result = -result;
+	    }else{
+    	    while(divisor <= dividend){
+    	        result++;
+    	        divisor += temp;
+    	    }
+	  } 
+	    return result; 
+	}
+}sult++;
+    	        divisor += temp;
+    	    }
+	  } 
+	    return result; 
+	}
+}

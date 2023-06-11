@@ -1,0 +1,39 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		
+		System.out.print("Enter the Length: ");
+		int length = s.nextInt();
+		
+		compute(length);
+	}
+	public static void compute(int length){
+	    Scanner s = new Scanner(System.in);
+	    long[] nums = new long[length];
+	    long sum = 0;
+	    for(int i = 0; i < nums.length; i++){
+	        System.out.print("Enter Num" + (i+1) + " : ");
+	        nums[i] = s.nextLong();
+	        sum += nums[i];
+	    }
+	   
+	    System.out.println("Total: " + sum);
+	    System.out.println("Divide: " + sum / length);
+	    System.out.println();
+	    
+	    long squared, totalSquared = 0;
+	    System.out.println("Squared");
+	    for(int i = 0; i < nums.length; i++){
+	        squared = nums[i] * nums[i];
+	        System.out.println(squared);
+	        totalSquared += squared;
+	    }
+	    
+	    System.out.println("Total: " + totalSquared);
+	    System.out.println("Divide: " + totalSquared / length);
+	    
+	}
+}	    
+	}
+}

@@ -1,0 +1,32 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.print("Enter a number: ");
+		int num = s.nextInt();
+		
+		System.out.print("Result: " + presistence(num));
+	}
+	public static int presistence(int num){
+	    int rem, multiply = 1, count = 0;
+
+	   do{
+	        multiply = 1;
+	        while(num != 0){
+	            rem = num % 10;
+	            System.out.print(rem + "  ");
+	            multiply = multiply * rem;
+	            num /= 10;
+	        }
+	        System.out.println();
+	        count++;
+	        num = multiply;
+	    }while(num > 9);
+	  
+	   System.out.println();
+	   System.out.println("Iterate: " + count);
+	   
+	   
+	 return multiply;
+	}	
+}

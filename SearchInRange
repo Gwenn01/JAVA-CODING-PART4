@@ -1,0 +1,22 @@
+public class Main {
+	public static void main(String[] args) {
+		int[] arr = {9, 5, 12, -7, 82, 19, 5};
+		int target = 12;
+		int[] range = {1, 5};
+		
+		System.out.println(searchInRange(arr, target, range));
+	}
+	public static int searchInRange(int[] arr, int target, int[] range){
+	    if(arr.length == 0){
+	        return -1;
+	    }
+	    
+	    for(int i = range[0]; i <= range[1]; i++){
+	        if(target == arr[i]){
+	            return i;
+	        }
+	    }
+	  
+	    return -1;
+	}
+}

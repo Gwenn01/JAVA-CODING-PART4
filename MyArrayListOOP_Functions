@@ -1,0 +1,138 @@
+class MyArrayList{
+    int size, index = 0;
+    String[] data;
+    
+    MyArrayList(int size){
+        this.size = size;
+        data = new String[size];
+    }
+    //
+    public void add(String add){
+        data[index] = add;
+        this.index++;
+    }
+    //
+    public void add(int Index, String add){
+        String[] newArr = new String[size];
+        newArr[Index] = add;
+        int j = 0;
+        for(int i = 0; i < newArr.length; i++){
+             if(i != Index){
+                newArr[i] = data[j];
+                j++;
+             }
+        }
+        for(int i = 0; i < data.length; i++) {
+            data[i] = newArr[i];
+        }
+        this.index++;
+    }
+    //
+    public void remove(){
+        String[] newArr = new String[size];
+        data[0] = "";
+        int j = 0;
+        for(int i = 0; i < newArr.length; i++){
+            if(data[i] != ""){
+                newArr[j] = data[i];
+                j++;
+            }
+        }
+        for(int i = 0; i < data.length; i++){
+            data[i] = newArr[i];
+        }
+        index--;
+    }
+   //
+   public void remove(int Index){
+        String[] newArr = new String[size];
+        data[Index] = "";
+        int j = 0;
+        for(int i = 0; i < data.length; i++){
+            if(data[i] != ""){
+                newArr[j] = data[i];
+                j++;
+            }
+        }
+        
+        for(int i = 0; i < data.length; i++){
+            data[i] = newArr[i];
+        }
+        index--;   
+   }
+    
+    public String get(){
+        String toString = "";
+        toString += "[";
+        int count = 0;
+        for(int i = 0; i < data.length; i++){
+             if(data[i] != null){
+                 count++;
+             }
+        }
+        for(int i = 0; i < data.length; i++){
+            if(data[i] != null){
+                toString += data[i];
+                if(i != count-1){
+                 toString += ", ";   
+                }
+            }
+        }
+        toString += "]";
+        return toString;
+    }
+    //
+    public String get(int index){
+        String toString = "";
+        toString += "[";
+        for(int i = 0; i < data.length; i++){
+            if(index == i){
+                toString += data[i];
+            }
+        }
+        toString += "]";
+        return toString;
+    }
+    //
+    public int length(){
+        int length = 0;
+        for(int i = 0; i < data.length; i++){
+            if(data[i] != null){
+                length++;
+            }
+        }
+        return length;
+    }
+    //
+    public boolean isEmty(){
+        boolean result = true;
+        for(int i = 0; i < data.length; i++){
+            if(data[i] != null){
+                result = false;
+            }
+        }
+        return result;
+    }
+}
+public class Main {
+	public static void main(String[] args) {
+		MyArrayList list = new MyArrayList(10);
+		
+		list.add("A");
+		list.add("B");
+		list.add("C");
+		list.add("D");
+		list.add(1, "J");
+		list.add(3, "S");
+		list.remove(0);
+		list.add("M");
+	
+		
+		
+		
+		System.out.println(list.get());
+		System.out.println(list.length());
+		System.out.println(list.isEmty());
+		
+	}
+}

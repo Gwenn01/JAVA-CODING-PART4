@@ -1,0 +1,33 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		
+		System.out.print("Enter a Number to check if is Palindrome: ");
+		int num = s.nextInt();
+		
+		if(isPalindrome(num)){
+		    System.out.print("The number is palindrime");
+		}else {
+		    System.out.print("The number is not palindrime");
+		}
+		
+	}
+	public static boolean isPalindrome(int num){
+	    int temp = num, rem, palin;
+	    String result = "";
+	    boolean isPalindrome;
+	    while(temp != 0){
+	        rem = temp %10;
+	        result += rem;
+	        temp /= 10;
+	    }
+	    palin = Integer.parseInt(result);
+	    if(palin == num){
+	        isPalindrome = true;
+	    }else{
+	        isPalindrome = false;
+	    }
+	    return isPalindrome;
+	}
+}

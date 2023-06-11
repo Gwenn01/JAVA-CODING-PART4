@@ -1,0 +1,32 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		
+		System.out.print("Enter Number: ");
+		int num = s.nextInt();
+		
+		System.out.println(numberOfDigits(num));
+	}
+	public static int numberOfDigits(int num){
+	    int digits = 0, temp = num;
+	    while(temp != 0){
+	        digits++;
+	        temp /= 10;
+	    }
+	    int tempDigits = digits, sum = 0, rem, multiply = 1;
+	    while(num != 0){
+	        rem = num % 10;
+	        while(tempDigits != 0){
+	            multiply = multiply * rem;
+	            tempDigits--;
+	        }
+	        sum += multiply;
+	        multiply = 1;
+	        tempDigits = digits;
+	        num /= 10;
+	    }
+	    
+	    return sum;
+	}
+}
